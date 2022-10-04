@@ -51,7 +51,10 @@ public class FicheroBinario {
             fichero = new File("empleados");
             f = new ObjectInputStream(new FileInputStream(fichero));
             System.out.println("Escribiendo objetos en binario en: " + fichero.getAbsolutePath());
-            String e1 = (String) f.readObject();
+            Empleado e1 = (Empleado) f.readObject();
+            Empleado e2 = (Empleado) f.readObject();
+            Empleado e3 = (Empleado) f.readObject();
+
     } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -59,4 +62,4 @@ public class FicheroBinario {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-    }
+    }}
