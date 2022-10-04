@@ -54,9 +54,11 @@ public class FicheroBinario {
             Empleado e1 = (Empleado) f.readObject();
             Empleado e2 = (Empleado) f.readObject();
             Empleado e3 = (Empleado) f.readObject();
-
-    } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            Stack<Empleado> pila =  (Stack<Empleado>) f.readObject();
+            System.out.println(pila.pop().toString());
+            System.out.println(pila.pop().toString());
+            System.out.println(pila.pop().toString());
+            System.out.println(pila.empty());
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
